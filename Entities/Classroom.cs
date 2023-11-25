@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolRoomTemperature.Entities;
 
@@ -11,6 +12,5 @@ public class Classroom
     public string RoomNumber { get; set; }
     public float Celsius { get; set; }
     public DateTime DateTime { get; set; }
-
-    public float Fahrenheit => 32 + Celsius / 0.5556f;
+    [NotMapped] public float Fahrenheit => 32 + Celsius / 0.5556f;
 }
